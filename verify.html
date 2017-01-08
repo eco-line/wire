@@ -1,0 +1,22 @@
+<div class="mainPage">
+<center><h1><b>A messaging app for teams <br>with Virtual Assistant</b></h1></center>
+<br>
+<br><br>
+
+<div class="formbox">
+
+<form ng-submit="verifyEmail()" >
+  <div class="form-group">
+  
+    <input type="text" placeholder="Enter verification Code." name="code" ng-model="code" class="form-control" required />
+  
+  </div>
+ 
+ <div id="error"> {{ status }} </div>
+<center>
+  <button type="submit" class="btn btn-primary">Click here to Verify</button>
+</center>
+</form>
+</div>
+</div>
+

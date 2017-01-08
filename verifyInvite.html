@@ -1,0 +1,38 @@
+<div class="mainPage">
+<center><h1><b>A messaging app for teams <br>with Virtual Assistant</b></h1></center>
+<br>
+<br><br>
+
+<div class="formbox">
+
+<form ng-submit="addUser()" >
+
+  <div class="form-group">
+
+  <label for="fname">First Name</label>
+  <input type="text" name="fname" placeholder="First Name" ng-model="fname" class="form-control" required />
+
+  <label for="lname">Last Name</label>
+  <input type="text" name="lname" placeholder="Last Name" ng-model="lname" class="form-control" required />
+
+  <label for="username">Username</label>
+  <input type="text" name="username" placeholder="Username" ng-model="username" class="form-control" required />    
+
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Password" ng-model="password" class="form-control" required /> 
+  
+  </div>
+ 
+ <div id="error"> {{ status }} </div>
+
+<center>
+
+<img ng-show="loader" src="images/uploading.gif">
+<br>
+
+  <button type="submit" class="btn btn-primary">Verify</button>
+</center>
+</form>
+
+</div>
+</div>

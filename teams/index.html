@@ -1,0 +1,225 @@
+<<<<<<< HEAD
+<div class="container-fluid" style="">
+	<div class="row" ng-controller="chatController">
+		
+		<div class="col-md-12" style="text-align:center;">
+			<h3 style="color:black;"><b>Team Name : </b> {{ teamName }} </h3>
+			<center>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#channelModal" > Create Channel </button>
+
+				<button class="btn btn-primary" ng-show="admin"
+				data-toggle="modal" data-target="#inviteModal" > Send Invite </button>
+
+				<button class="btn btn-primary" ng-click="logout()" >LOGOUT</button>
+			</center>
+		</div>		
+		<div class="col-md-12" >
+		<br>
+			
+			<div class="col-xs-3" >
+				<ul class="nav nav-tabs tabs-left chatlist" id="list" style="background-color:#4d394b;height:400px;overflow-y:scroll;overflow-x: hidden;">
+					
+					<li ng-repeat="y in channels" id="{{ y.id }}" style="cursor:pointer;" ng-click="showChannelChatBox(y.id)" ><a>  Channel - {{ y.name }} <br><span ng-if="y.readPending!=0" style="background-color:black; color:#ab9ba9; padding:3px; width:10px;">{{ y.readPending }}</span></a></li>
+					
+					<li ng-repeat="x in mainUsers track by $index" id="{{ x.id }}" style="cursor:pointer;"  ng-click="showChatBox(x.id)" ><a> {{ x.fname }} <br><span ng-if="x.readPending!=0" style="background-color:black; color:#ab9ba9; padding:3px; width:10px;">{{ x.readPending }}</span></a></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-9">
+=======
+<div class="container chatContainer" style="background: rgba(0,0,0,0.4); border-radius: 5px;">
+	<div class="row" ng-controller="chatController">
+		
+		
+		<div class="col-md-6" >
+			<hr/>
+			
+			<div class="col-xs-4" >
+				<ul class="nav nav-tabs tabs-left chatlist" style="border-top:1px solid white; height:400px; overflow-y:scroll; overflow-x: hidden;">
+					
+					<li ng-repeat="y in channels" id="{{ y.id }}" style="border-bottom:1px solid white;cursor:pointer;" ng-click="showChannelChatBox(y.id)" ><a>  Channel - {{ y.name }} <br><span ng-if="y.readPending!=0" style="background-color:black; color:white; padding:3px; width:10px; border-radius: 10px;">{{ y.readPending }}</span></a></li>
+					
+					<li ng-repeat="x in mainUsers track by $index" id="{{ x.id }}" style="border-bottom:1px solid white;cursor:pointer;"  ng-click="showChatBox(x.id)" ><a> {{ x.fname }} <br><span ng-if="x.readPending!=0" style="background-color:black; color:white; padding:3px; width:10px; border-radius: 10px;">{{ x.readPending }}</span></a></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-8">
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="chatDisplay" style="background:black; height:400px; overflow-y:scroll;"  >
+
+						<div ng-repeat="x in chatmessages | orderBy: 'date'" > 
+<<<<<<< HEAD
+
+						<!-- Send By user-->
+						<div ng-if="x.send==1" style="margin-top:0px; margin-bottom:0px;background:#088A4B; padding:3px;color:white;"> {{ parseD(x.date) }} <br>{{ x.message }}</div>
+
+
+						<!--Recieved By user-->
+						<div ng-if="x.send==0" style="margin-top:0px; margin-bottom:0px; text-align:right; background:#5858FA; padding:3px;color:white;"> 
+=======
+
+						<!-- Send By user-->
+						<div ng-if="x.send==1" style="margin-top:0px; margin-bottom:0px;background:grey; padding:3px;color:white;"> {{ parseD(x.date) }} <br>{{ x.message }}</div>
+
+
+						<!--Recieved By user-->
+						<div ng-if="x.send==0" style="margin-top:0px; margin-bottom:0px; text-align:right; background:blue; padding:3px;color:white;"> 
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+						     {{ parseD(x.date) }} From: {{ getName(x.senderID) }} <br> {{ x.message }} </div>
+
+						<hr style="color:white;margin-top:0px; margin-bottom:0px;">
+						
+						</div>
+						
+
+					</div>
+					<br>
+<<<<<<< HEAD
+						<!-- Suggesstions Display -->
+					<span ng-click="sendRMessage(y.msg)" style="color:white; background: #4d394b; border-radius: 5px; padding: 6px; cursor: pointer;" ng-repeat="y in botDataDisplay | orderBy: '-rank'" > 
+					{{ y.msg }}&nbsp;&nbsp;&nbsp;
+					</span>
+						
+						<br><br>
+					<form ng-submit="sendMessage()" >
+							<div class="form-group">
+								<input type="text" style="display: inline; width:75%; padding:6px;" name="message" placeholder="Enter your message" ng-model="message" required />
+=======
+					<br>
+					<form ng-submit="sendMessage()" >
+							<div class="form-group">
+								<input type="text" style="display: inline; width:70%; padding:6px;" name="message" placeholder="Enter your message" ng-model="message" required />
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+								<button type="submit" style="width:20%;" class="btn btn-primary">SEND</button>
+							</div>
+							
+					</form>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+<<<<<<< HEAD
+=======
+
+		<div class="col-md-6" style="text-align:center;">
+			<h3 style="color:white;"><b>Team Name : </b> {{ teamName }} </h3>
+			<br>
+			<center>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#channelModal" > Create Channel </button><br><br>
+
+				<button class="btn btn-primary" ng-show="admin"
+				data-toggle="modal" data-target="#inviteModal" > Send Invite </button><br><br>
+
+				<button class="btn btn-primary" ng-click="logout()" >LOGOUT</button><br><br>
+			</center>
+		</div>
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+	</div>
+</div>
+
+<!-- Create Channel Modal -->
+<div id="channelModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<center><h4 class="modal-title"> Create Channel </h4></center>
+			</div>
+
+			<div class="modal-body" ng-controller="createChannelController">
+
+				<form class="form-horizontal" ng-submit="createChannel();">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2">Channel Name:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="channelname" ng-model="channelname" placeholder="Enter channel name" required >
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" >Category:</label>
+						<div class="col-sm-10"> 
+							<input type="text" class="form-control" name="channelcategory" ng-model="channelcategory" required placeholder="Enter Category">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" >Select Members:</label>
+						<div class="col-sm-10"> 
+							<div ng-repeat="x in mainUsers track by $index">
+								<label><input type="checkbox" ng-model="channelmembers[$index]" ng-true-value="'{{x.id}}'" ng-false-value="''">{{ x.email }}</label>
+							</div> 
+
+						</div>
+					</div>
+					<div id="error"> {{ status }} </div>
+					<center>
+						<img ng-show="loader" src="images/uploading.gif">
+						<br><br></center>
+
+						<div class="form-group"> 
+							<div class="col-sm-offset-2 col-sm-10">
+								<center><button type="submit" class="btn btn-default">Create Channel</button> </center>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+				<div class="modal-footer">
+				</div>
+			</div>
+
+		</div>
+	</div>
+<<<<<<< HEAD
+
+
+
+
+
+
+=======
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+
+	<!-- Create Channel Modal -->
+	<div id="inviteModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<center><h4 class="modal-title"> Invite your employees </h4></center>
+				</div>
+				<div class="modal-body" ng-controller="inviteFriendController">
+					<form ng-submit="sendInvite()" >
+						<div class="form-group">
+							<h3><b>Invite Your Friends </b></h3>
+							<label for="email">Enter Your Friend's Email Address.</label>
+							<input type="email" name="email2" placeholder="Enter email address" ng-model="email2" class="form-control" required />
+						</div>
+						<div id="error">{{ status }}</div>
+						<center>
+							<img ng-show="loader" src="images/uploading.gif">
+							<br><br>
+
+							<button type="submit" class="btn btn-primary">Send Invite</button>
+						</center>
+					</form>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+<title>Wire</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="MyController">
+
+<<<<<<< HEAD
+<!--<div id="bg"></div>-->
+<header>
+
+<nav class="navbar navbar-inverse" style="background: rgba(0,0,0,0.5); margin-bottom: 0pc !important; border-radius: 0px; border:0px; padding: 1%;" >
+=======
+<div id="bg"></div>
+<header>
+
+<nav class="navbar navbar-inverse" style="background: rgba(0,0,0,0.5); border-radius: 0px; border:0px; padding: 1%;" >
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="letter-spacing:2px;color:white;" href="/wire"><b>WIRE</b></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-repeat="x in teamnames" ><a style="color:white;" href="#/teams/{{ x }}"> {{ x }} </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+   
+      <li ng-show="loginButton" ><a href="#/login" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Sign In to Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+</header>
+<!-- Main View --> 
+<div ng-view></div>
+<!-- Main View -->
+
+<<<<<<< HEAD
+=======
+<br><br>
+<br>
+>>>>>>> f0c7813f360b77ca213eeba009be48cabd9cdcdc
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+<script src="js/routes.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+</html>
